@@ -188,5 +188,53 @@ System.out.printf("%x", 0x1A); //1A
 
 
 
+Scanner: 화면으로부터 데이터를 입력받는 기능을 제공하는 클래스
+
+1. import문 추가
+
+   `import java.util.*;`
+
+2. Scanner 객체의 생성
+   `Scanner scanner = new Scanner(System.in);`
+
+3. Scanner 객체를 사용
+
+   `int num = scanner.nextInt(); // 화면에서 입력받은 정수를 num에 저장`
+
+   `String input = scanner.nextLine(); // 화면에서 입력받은 내용을 input에 저장`
+
+   `int num = Integer.parseInt(input); // 문자열(input)을 숫자(num)로 변환`
+
+ 
+
+오버플로우: 표현가능한 범위를 넘는 것
+
+​	최댓값 + 1  => 최솟값
+​	최솟값 - 1  => 최댓값
 
 
+
+### 타입 간 변환방법
+
+1. 문자와 숫자간의 변환
+
+   - 문자 '0' 더하거나 뺌
+
+2. 문자열로의 변환
+
+   - 빈문자열 더해주면 문자열로 바뀜
+
+3. 문자열을 숫자로 변환
+
+   - `Integer.parseInt("3")`
+   - `Double.parseDouble("3.4")`
+
+4. 문자열을 문자로 변환
+
+   - `"3".charAt(0)`
+
+   
+
+   
+
+   
