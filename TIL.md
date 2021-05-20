@@ -377,3 +377,86 @@ default 문은 생략 가능
 `Math.random()`- 0.0과 1.0 사이의 임의의 double 값을 반환
 
 형변환, 덧셈으로 원하는 정수 범위 설정 가능
+
+
+
+### for 문
+
+: 반복횟수를 알 때 적합. 조건식이 True인 한 수행됨
+
+```java
+for(초기화;조건식;증감식){
+	수행될 문장
+}
+```
+
+
+
+# 실행해 보기 전에 예측하는 습관을 가져야 함
+
+
+
+### 중첩for문
+
+### while문
+
+: 반복횟수를 모를 때(보통), 조건식이 True인 한 수행
+
+for문과 while문은 100% 호환 가능
+
+- 무한반복문
+
+  ```java
+  # for문 - 조건식 비우면 됨
+  for(;;){
+  
+  }
+  
+  # while문 - 조건식 비우면 에러 발생
+  while(true) {
+  
+  }
+  ```
+
+  
+
+### do-while문
+
+: 블럭을 최소한 한 번 이상 반복 - 사용자 입력 받을 때 유용
+
+```java
+do {
+	
+} while (조건식);
+```
+
+### break문
+
+: 자신이 포함된 하나의 반복문을 벗어난다
+
+### continue문
+
+: 자신이 포함된 반복문의 끝으로 이동 - 다음 반복으로 넘어감
+
+### 이름붙은 반복문
+
+: 반복문에 이름을 붙여서 하나 이상의 반복문을 벗어날 수 있다.
+
+```java
+class Ex4_19
+{
+	public static void main(String[] args)
+  {
+    Loop1 : for(int i=2;i<=9;i++) {
+      for(int j=1;j<=9;j++) {
+        if(j==5)
+          break Loop1;
+        
+				System.out.println(i+"*"+j+"="+i*j);        
+      }
+      System.out.println();
+    }
+  }
+}
+```
+
