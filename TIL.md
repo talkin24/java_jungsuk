@@ -460,3 +460,69 @@ class Ex4_19
 }
 ```
 
+
+
+# Ch5. 배열
+
+: 같은 타입의 여러 변수를 하나의 묶음으로 다루는 것
+
+
+
+배열의 선언 - 배열을 다루기 위한 참조변수의 선언
+
+| 선언방법           | 선언 예                              |
+| ------------------ | ------------------------------------ |
+| `타입[] 변수이름;` | `int[] score;`<br />`String[] name;` |
+| `타입 변수이름[];` | `int score[];`<br />`String name[];` |
+
+```java
+int[] score; 				// int타입의 배열을 다루기 위한 참조변수 score 선언
+score = new int[5]; // int타입의 값 5개를 저장할 수 있는 배열 생성
+
+score[3] = 100;      // 배열 score의 4번째 요소에 100을 저장
+int value = score[3]; // 배열 score의 4번째 요소 값을 읽어서 value에 저장
+```
+
+
+
+배열의 인덱스 - 각 요소에 자동으로 붙는 번호
+
+
+
+배열의 길이 - 배열은 한번 생성하면 실행동안 그 길이를 바꿀 수 없다.
+
+: 배열이름.length (int형 상수)
+
+
+
+배열의 초기화: 배열의 각 요소에 처음으로 값을 저장하는 것 
+
+```java
+int[] score = new int[] {50, 60, 70, 80, 90};
+int[] score = {50, 60, 70, 80, 90}; // new int []를 생략할 수 있음, 두문장으로 나누면 에러남
+
+int[] score;
+score = {50, 60, 70, 80, 90}; 두문장으로 나눠서 에러 발생
+```
+
+
+
+배열의 출력
+
+```java
+int[] iArr = {100, 95, 90, 80, 70};
+System.out.println(iArr); // [I@14318와 같은 형식의 문자열이 출력된다. Char배열인 경우엔 제대로 찍어줌
+```
+
+for문을 쓰거나, Arrays 클래스의 toString사용
+
+```java
+import java.util.Arrays; // ctrl+shift+o 자동으로 import문 생성
+
+for(int i=0, i< iArr.length; i++) {
+		System.out.println(iArr[i]);
+}
+
+System.out.println(Arrays.toString(iArr));
+```
+
