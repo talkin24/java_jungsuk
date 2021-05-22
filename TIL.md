@@ -526,3 +526,8 @@ for(int i=0, i< iArr.length; i++) {
 System.out.println(Arrays.toString(iArr));
 ```
 
+
+
+배열의 활용
+
+ : 총합, 평균, 최댓값, 최솟값, 섞기
