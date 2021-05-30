@@ -568,3 +568,99 @@ int[][] arr = {
 
 2차원배열 = 1차원 배열의 배열
 
+
+
+## String클래스
+
+String 클래스는 char[]와 메서드를 결합한 것
+
+String 클래스는 내용을 변경할 수 없다.(read only) => 문자열 변경 시 새로운 문자열이 만들어질뿐 기존 문자열이 바뀌는 것이 아니다
+
+### 주요 메서드
+
+| 메서드                             | 설명                                                         |
+| ---------------------------------- | ------------------------------------------------------------ |
+| char charAt(int index)             | 문자열에서 해당 위치(index)에 있는 문자를 반환한다           |
+| int length()                       | 문자열의 길이를 반환한다                                     |
+| String substring(int from, int to) | 문자열에서 해당 범위의 문자열을 반환한다(to는 포함안됨)      |
+| boolean equals(Object obj)         | 문자열의 내용이 같은지 확인한다. 같으면 결과는 true, 다르면 false |
+| char[] toCharArray()               | 문자열을 문자배열(char[])로 변환해서 반환한다                |
+
+## Arrays클래스
+
+### 배열의 출력과 비교 - equals(), toString()
+
+```java
+## 출력
+int[] arr = {0, 1, 2, 3, 4};
+int[][] arr2D = {{11, 12}, {21, 22}};
+System.out.println(Arrays.toString(arr)); // [0, 1, 2, 3, 4]
+System.out.println(Arrays.deepToString(arr2D)); // [[11, 12], [21, 22]]
+## 비교
+String[][] str2D = new String[][]{{"aaa", "bbb"}, {"AAA". "BBB"}}};
+String[][] str2D2 = new String[][]{{"aaa", "bbb"}, {"AAA". "BBB"}}};
+System.out.println(Arrays.equals(str2D, str2D2)); // false; 1차원 배열 비교
+System.out.println(Arrays.deepequals(str2D, str2D2)); // true; 2차원 이상
+```
+
+### 배열의 복사 - copyOf(), copyOfRange()
+
+```java
+int[] arr = {0, 1, 2, 3, 4};
+int[] arr2 = Arrays.copyOf(arr, arr.length); // arr2 = [0, 1, 2, 3, 4]
+int[] arr3 = Arrays.copyOf(arr, 3);					 // arr3 = [0, 1, 2]
+int[] arr4 = Arrays.copyOf(arr, 7);	         // arr4 = [0, 1, 2, 3, 4, 0, 0]
+int[] arr5 = Arrays.copyOfRange(arr, 2, 4);  // arr5 = [2, 3]
+int[] arr6 = Arrays.copyOfRange(arr, 0, 7);  // arr6 = [0, 1, 2, 3, 4, 0, 0]
+```
+
+### 배열의 정렬 - sort()
+
+```java
+int[] arr = {3, 2, 0, 1, 4};
+Arrays.sort(arr); // 배열을 오름차순 정렬한다.
+System.out.println(Arrays.toString(arr)); // [0, 1, 2, 3, 4]
+```
+
+
+
+# Ch6. 객체지향개념(OOP, object-oriented programming)
+
+1. 캡슐화
+2. 상속
+3. 추상화
+4. 다형성****
+
+객체지향 언어 = 프로그래밍 언어 + 객체지향개념(규칙)
+
+객체 = 속성(변수) + 기능(메서드)
+
+객체: 모든 인스턴스를 대표하는 일반적 용어
+
+인스턴스: 특정 클래스로부터 생성된 객체
+
+인스턴스화: 클래스 -> 인스턴스(객체)
+
+Q. 클래스가 왜 필요한가?
+A. 객체를 생성하기 위해
+
+Q. 객체가 왜 필요한가?
+A. 객체를 사용하기 위해
+
+Q. 객체를 사용한다는 것은?
+A. 객체가 가진 속성과 기능을 사용하려고
+
+
+
+### 하나의 소스파일에 여러 클래스 작성
+
+| 올바른 작성 예                                               | 설 명                                                        |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Hello2.java<br />public class Hello2{ }<br />           class Hello3 { } | public class가 있는 경우, 소스파일의 이름은 반드시 public class의 이름과 일치해야 한다 |
+| Hello2.java<br />class Hello2 { }<br />class Hello3 { }      | public class가 하나도 없는 경우, 소스파일의 이름은 'Hello2.java', 'Hello3.java' 둘다 가능하다 |
+
+- 하나의 소스파일에 둘 이상의 public class가 존재하면 안된다.
+- 대소문자 구분해야 한다
+- public class가 존재하면, public class이름과 파일명이 동일해야 한다.
+- 가능하면 하나의 소스파일에는 하나의 클래스만 작성하는 것이 바람직하다.
+- 
