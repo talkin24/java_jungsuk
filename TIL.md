@@ -743,3 +743,32 @@ class Variables
 | 인스턴스변수(iv) |       클래스영역        |            인스턴스가 생성 되었을 때             |
 |   지역변수(lv)   | 클래스 영역 이외의 영역 |           변수 선언문이 수행되었을 때            |
 
+
+
+### cv와 iv의 차이
+
+객체의 속성중 개별적인 속성: 인스턴스변수
+
+객체 모두 공통적으로 유지되어야 하는것: cv(static)
+
+```java
+class Card{
+	String kind;
+	int number;
+	
+	static int width = 100;
+	static int height = 250;
+}
+
+
+Card c = new Card();
+c.kind = "Heart";
+c.number = 5;
+c.width = 200;     // 가능하나 권장하지 않음
+c.height = 300;    // 가능하나 권장하지 않음
+Card.width = 200;  // 권장
+Card.height = 300; // 권장
+```
+
+- cv는 객체 생성 없이 사용가능!!!
+- cv는 iv처럼 바꾸어도 전체가 바뀜. 즉 공유하는 모든 값이 변화됨
