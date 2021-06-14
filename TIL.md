@@ -822,4 +822,65 @@ Card.height = 300; // 권장
 
 ### 기본형 매개변수
 
-기본형 매개변수 - read only
+read only
+
+
+
+### 참조형 매개변수
+
+read & write
+
+객체의 주소 자체를 알고 있기 때문에 읽기 쓰기 전부 가능
+
+```java
+class Data2 {int x;}
+
+class Ex6_7 {
+  public static void main(String[] args) {
+    Data2 d = new Data2();
+    d.x = 10;
+    System.out.println("main() : x = " + d.x);
+    
+    change(d);
+    System.out.println("After change(d)");
+    System.out.println("main() : x = " + d.x);
+  }
+  
+  static void change(Data2 d) {
+    d.x = 1000;
+    System.out.println("change(): x = " + d.x);
+  }
+}
+// main() : x = 10
+// change() : x = 1000
+// After change(d)
+// main() : x = 1000
+```
+
+반환타입이 참조형인 경우엔 복사한 객체의 주소를 반환(=객체를 반환)
+
+```java
+class Data3 { int x; }
+
+class Ex6_8 {
+  public static void main(String[] args) {
+    Data3 d = new Data3();
+    d.x = 10;
+    
+    Data3 d2 = copy(d);
+    System.out.println("d.x = " + d.x);
+    System.out.pringln("d2.x = " + d2.x);
+  }
+  
+  static Data3 copy(Data3 d) {
+    Data3 tmp = new Data3();
+    
+    tmp.x = d.x;
+    
+    return tmp;
+  }
+}
+// d.x = 10
+// d2.x = 10
+```
+
