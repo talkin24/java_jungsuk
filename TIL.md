@@ -884,3 +884,59 @@ class Ex6_8 {
 // d2.x = 10
 ```
 
+
+
+
+
+### 인스턴스 메서드
+
+- 인스턴스 생성 후, '참조변수.메서드이름()'으로 호출
+- 인스턴스 멤버(iv, im)와 관련된 작업을 하는 메서드
+- 메서드 내에서 인스턴스 변수(iv) 사용 가능
+
+### static메서드
+
+- **객체 생성 없이** '클래스이름.메서드이름()'으로 호출 (객체생성 안하니까 참조변수 없음. 클래스이름 사용)
+- 인스턴스 멤버(iv, im)와 관련없는 작업을 하는 메서드
+- 메서드 내에서 인스턴스 변수(iv) 사용 불가
+
+=> iv 사용 여부로 구분!
+
+**객체: iv 묶음** => 인스턴스 메서드는 iv로 작업하기 때문에 객체를 생성해야함!
+
+```java
+class MyMath2 {
+	long a, b; // iv
+  
+  long add() { // 인스턴스 메서드, iv
+    return a + b; // iv
+  }
+  
+  static long add(long a, long b) { // 클래스메서드(static메서드), lv
+    return a + b;  // lv
+  }
+}
+
+
+class MyMathTest2 {
+  public static void main(String args[]) {
+    System.out.println(MyMath2.add(200L, 100L)); // 클래스메서드 호출
+    MyMath2 mm = new MyMath2 (); // 인스턴스 생성
+    mm.a = 200L;
+    mm.b = 100L;
+    System.out.println(mm.add()); // 	인스턴스메서드 호출
+  }
+}
+```
+
+static을 언제 붙여야 할까?
+
+- 속성(멤버 변수) 중에서 공통 속성에 static을 붙인다.
+- 인스턴스 멤버(iv, im)을 사용하지 않는 메서드에 static을 붙인다.
+
+
+
+인스턴스메서드/static메서드 모두 클래스 변수는 사용가능. 단 static메서드의 경우, 호출 시 인스턴스가 존재한다는 보장이 없기 때문에 iv는 사용하면 안됨
+
+인스턴스 메서드는 다른 인스턴스 메서드 호출 가능(이미 인스턴스가 생성되었으니까). 단 static메서드는 인스턴스 메서드를 호출할 수 없다. static끼리는 서로 호출 가능
+
