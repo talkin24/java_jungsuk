@@ -940,3 +940,37 @@ static을 언제 붙여야 할까?
 
 인스턴스 메서드는 다른 인스턴스 메서드 호출 가능(이미 인스턴스가 생성되었으니까). 단 static메서드는 인스턴스 메서드를 호출할 수 없다. static끼리는 서로 호출 가능
 
+
+
+### 오버로딩
+
+: 한 클래스 안에 같은 이름의 메서드 여러 개 정의하는 것
+
+오버로딩이 성립하기 위한 조건 3가지
+
+ 1. 메서드 이름이 같아야 한다.
+
+ 2. 매개변수의 개수 또는 타입이 달라야 한다.
+
+    - 매개변수의 개수와 타입이 같은 경우, **메서드 중복정의**
+
+      ```java
+      // 메서드 중복정의
+      int add(int a, int b) { return a+b;}
+      int add(int x, int y) { return x+y;}
+      ```
+
+ 3. **반환 타입은 영향없다.**
+
+    ```java
+    // 메서드 중복정의
+    int add(int a, int b) { return a+b; }
+    long add(int a, int b) { return (long)(a+b); }
+    ```
+
+```java
+// 메서드 오버로딩. 단 인풋 매개변수 입력 시 모호하지 않게 입력해야 함
+long add(int a, long b) { return a+b; }
+long add(long a, int b) { return a+b; }
+```
+
