@@ -974,3 +974,22 @@ long add(int a, long b) { return a+b; }
 long add(long a, int b) { return a+b; }
 ```
 
+
+
+### 생성자(constructor)
+
+- 인스턴스가 생성될 때마다 호출되는 '인스턴스 초기화 매서드'
+
+```java
+Time t = new Time();
+t.hour = 12;
+t.minute = 34;
+t.second = 56;
+```
+
+4줄을 1줄으로 바꾸는게 생성자. 훨씬 직관적
+
+```java
+Time t = new Time(12, 34, 56);
+```
+
