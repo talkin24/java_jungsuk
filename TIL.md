@@ -993,3 +993,32 @@ t.second = 56;
 Time t = new Time(12, 34, 56);
 ```
 
+- 생성자의 이름은 클래스 이름과 같아야 한다
+- 리턴값이 없다(void 안붙임)
+- 모든 클래스는 반드시 생성자를 가져야 한다
+
+기본생성자: 매개변수가 없는 생성자. 생성자가 하나도 없을 때만, 컴파일러가 기본 생성자 자동 추가
+
+```java
+클래스이름() { }  // 기본 생성자
+Point() { }    // Point클래스의 기본 생성자
+```
+
+**기본생성자는 항상 넣어두는 습관을 갖는게 좋다**
+
+```java
+// 매개변수가 있는 생성자
+class Car {
+  String color;
+  String gearType;
+  int door;
+  
+  Car() {} // 기본 생성자
+  Car(String c, String g, int d) { // 매개변수가 있는 생성자
+    color = c;
+    gearType = g;
+    door = d;
+  }
+}
+```
+
