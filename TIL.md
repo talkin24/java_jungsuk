@@ -1094,3 +1094,31 @@ class InitTest{
   - cv -> iv
   - 자동 -> 간단 -> 복잡
 
+
+
+### 상속
+
+: 기존 클래스로 새로운 클래스를 작성(코드의 재사용). 두 클래스를 부모와 자식으로 관계를 맺어 주는 것
+
+```java
+class Parent { }
+class Child extends Parent {
+ //...
+}
+```
+
+- 자손은 조상의 모든 멤버를 상속 받는다.(생성자, 초기화 블럭 제외)
+- 자손의 멤버 개수는 조상보다 적을 수 없다.
+- 자손의 변경은 조상에 영향을 미치지 않는다.
+
+```java
+class Point {
+		int x;
+		int y;
+}
+
+class Point3D extends Point {
+		int z;     // Point class의 영향을 받음
+}
+```
+
