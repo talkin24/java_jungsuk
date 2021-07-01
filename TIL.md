@@ -1122,3 +1122,77 @@ class Point3D extends Point {
 }
 ```
 
+
+
+### 포함 관계
+
+포함(composite)이란?
+
+- 클래스의 멤버로 참조변수를 선언하는 것
+
+- 작은 단위의 클래스를 만들고, 이들을 조합하여 클래스를 만든다.
+
+```java
+class Circle {
+		int x;
+		int y;
+		int r;
+}
+-------------------------------------
+class Point {
+  	int x;
+  	int y;
+}
+class Circle {
+  	Point c = new Point();
+  	int r;
+}
+```
+
+
+
+상속관계: ~은 ~이다.
+
+포함관계: ~은 ~을 가지고 있다.
+
+
+
+### 단일상속
+
+Java는 단일상속만을 허용함(C++은 다중상속 허용) <- 충돌문제 떄문, 단 인터페이스를 사용하면 충돌문제 없이 다중상속 가능
+
+=> 비중이 높은 클래스 하나만 상속관게로, 나머지는 포함관계로 한다.
+
+```java
+class Tv {
+ ...
+}
+
+class DVD {
+ ...
+}
+
+class TvDVD extends Tv {
+	DVD dvd = new DVD();
+	
+	void play() {
+			dvd.play();
+	}
+	
+	void stop() {
+			dvd.stop();
+	}
+	
+	vodi rew() {
+			dvd.rew();
+	}
+}
+```
+
+
+
+### Object 클래스 - 모든 클래스의 조상
+
+- 부모가 없는 클래스는 자동적으로 Object클래스를 상속받게 된다(컴파일러가 자동 추가)
+- 모든 클래스는 Object클래스에 정의된 11개의 메서드를 상속받는다.(toString(), equals(Object obj), hashCode())
+
