@@ -1196,3 +1196,30 @@ class TvDVD extends Tv {
 - 부모가 없는 클래스는 자동적으로 Object클래스를 상속받게 된다(컴파일러가 자동 추가)
 - 모든 클래스는 Object클래스에 정의된 11개의 메서드를 상속받는다.(toString(), equals(Object obj), hashCode())
 
+
+
+### 오버라이딩(overriding) - 상속받은 조상의 메서드를 자신에 맞게 변경하는 것
+
+- 선언은 못바꾸고 내용(구현부)만 변경가능
+
+  ```java
+  class Point {
+  	int x;
+    int y;
+    
+    String getLocation() {
+      	return "x:" + x + ",y :"+ y;
+    }
+  }
+  
+  class Point3D extends Point {
+    int z;
+    
+    String getLocation() { // 조상의 getLocation()을 오버라이딩
+      return "x:" + x + ",y :"+ y + ",z :" + z;
+    }
+  }
+  ```
+
+  
+
